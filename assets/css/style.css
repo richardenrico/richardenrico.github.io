@@ -1,0 +1,44 @@
+body{
+    background-color: #D1D3D4;
+}
+.box{
+    background-color: white;
+    padding: 20px 40px 40px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.box .img-user {
+    background: blue;
+    border-radius: 50%;
+    border: 2.5px solid blue;
+    width: 80px;
+}
+
+.box h3{
+    margin: -5px 0 30px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.box .input{
+    padding: 10px 0;
+    margin-bottom: 30x;
+    width: 100%;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    border-bottom: 2px solid #999;
+    overflow: hidden;
+}
+
+.box .btn {
+    cursor: pointer;
+    background-color: blue;
+    color: white;
+    width: 100%;
+    margin-bottom:0;
+}
+
