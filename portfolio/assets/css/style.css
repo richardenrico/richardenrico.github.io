@@ -1,0 +1,385 @@
+/* Variables Classes */
+
+html, body {
+    font-family: 'Roboto Condensed', cursive;
+    margin: 0%;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+
+:root {
+    --border-color: #201f1f17;
+    --box-shadow: 0px 10px 30px rgba(57, 56, 61, 0.205);
+    --roboto-condensed: 'Roboto Condensed', cursive;
+}
+
+/* End Variables Classes */
+
+/* Global Classes */
+
+.button {
+    padding: .8rem 2.2rem;
+    font: normal 500 16px/20px var(--roboto-condensed);
+    position: relative;
+    border: 3px solid transparent;
+    border-radius: 4px;
+}
+
+.button.primary-button {
+    background: black;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    color: whitesmoke;
+    transition: background .6s ease;
+    box-shadow: var(--box-shadow);
+}
+
+.button.primary-button:hover {
+    background: whitesmoke;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    color: black;
+}
+
+.button.primary-button::after, .button.secondary-button::after {
+    position: absolute;
+    top: -2px; left: -2px;
+    bottom: -2px; right: -2px;
+    background: black;
+    content: " ";
+    z-index: -1;
+    border-radius: 1px;
+}
+
+.button.secondary-button {
+    background: whitesmoke;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    transition: background .6s ease;
+}
+
+.button.secondary-button:hover {
+    background: black;
+    color: whitesmoke;
+    box-shadow: var(--box-shadow);
+}
+
+button:focus,
+button:active,
+button:hover,
+.btn:active,
+.btn.active {
+    outline: 0px !important;
+    box-shadow: none !important;
+}
+
+.circle {
+    height: 70px;
+    width: 70px;
+    background-color: lightgray;
+    color: black;
+    padding: 12px;
+    font-size: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.circle p {
+    color: gray;
+}
+
+.navbar_fixed {
+    position: fixed;
+    width: 100%;
+    top: -1px;
+    left: 0; right: 0;
+    background: red;
+    box-shadow: var(--box-shadow);
+    z-index: 999;
+    transition: background 1s ease;
+}
+
+/* End Global Classes */
+
+/* Header Area */
+
+.header-area .main-menu .navbar {
+    background-color: whitesmoke;
+}
+
+.header-area .main-menu .navbar .navbar-brand {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.header-area .main-menu .navbar .nav-link {
+    color: black;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.header-area .main-menu .navbar .nav-link:hover {
+    color: whitesmoke;
+    background-color: black;
+    transition: 0.5s ease;
+}
+
+/* End Header Area */
+
+/* Banner Area */
+
+.site-main .site-banner {
+    width: 100%;
+    height: 100vh;
+}
+
+.site-main .site-banner .site-title h3 {
+    margin-left: 1rem;
+    padding-top: 10rem;
+    font-size: 4.4rem;
+    font-weight: 700;
+}
+
+.site-main .site-banner .site-title h6 {
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    line-height: 1;
+    border-bottom: 3px solid black;
+    width: 40%;
+}
+
+.site-main .site-banner .banner-image > img {
+    -webkit-box-shadow: 6px 4px 41px -24px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 4px 41px -24px rgba(0,0,0,0.75);
+    box-shadow: 6px 4px 41px -24px rgba(0,0,0,0.75);
+    height: 600px;
+}
+
+/* End Banner Area */
+
+/* About Area */
+
+.about-area {
+    padding: 10rem 0rem;
+}
+
+.about-area .about-image img {
+    height: 600px;
+    -webkit-box-shadow: 6px 4px 41px -24px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 4px 41px -24px rgba(0,0,0,0.75);
+    box-shadow: 6px 4px 41px -24px rgba(0,0,0,0.75);
+}
+
+
+.about-area .about-content h1 {
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.about-area .about-content .progress {
+    background-color: whitesmoke;
+    justify-content: flex-start;
+    border-radius: 50px;
+    align-items: center;
+    position: relative;
+    display: flex;
+    height: 25px;
+    width: 100%;
+}
+
+.about-area .about-content .about-skill {
+    width: 100%;
+    max-width: 600px;
+}
+
+.about-area .about-content .about-skill .skill-name {
+    text-align: left;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 20px 0;
+}
+
+.about-area .about-content .about-skill .skill-bar {
+    height: 20px;
+    background-color: #cacaca;
+    border-radius: 8px;
+}
+
+.about-area .about-content .about-skill .skill-bar .skill-per {
+    height: 20px;
+    background-color: black;
+    border-radius: 8px;
+    width: 0;
+    transition: 1s linear;
+    position: relative;
+}
+
+.about-area .about-content .about-skill .skill-bar .skill-per::before {
+    content: attr(per);
+    position: absolute;
+    padding: 4px 6px;
+    background-color: black;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 4px;
+    top: -35px;
+    right: 0;
+    transform: translateX(50%);
+}
+
+.about-area .about-content .about-skill .skill-bar .skill-per::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+    top: -16px;
+    right: 0;
+    transform: translateX(50%) rotate(45deg);
+    border-radius: 2px;
+}
+
+.about-area .about-content .site-button .button.primary-button {
+    background: black !important;
+}
+
+.about-area .about-content .site-button .button.primary-button:hover {
+    background: whitesmoke !important;
+}
+
+.about-area .about-content .site-button .button.secondary-button:hover {
+    background: black !important;
+}
+
+.about-area .about-content .site-button .button.primary-button::after, .button.secondary-button::after {
+    background-color: whitesmoke !important;
+}
+
+/* End About Area */
+
+/* Services Area */
+
+.site-main .services-area h1 {
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.site-main .services-area .card {
+    border: none;
+    outline: none;
+    -webkit-box-shadow: -8px 6px 89px -65px rgba(0,0,0,0.75);
+    -moz-box-shadow: -8px 6px 89px -65px rgba(0,0,0,0.75);
+    box-shadow: -8px 6px 89px -65px rgba(0,0,0,0.75);
+}
+
+.site-main .services-area .card:hover .card-body .circle {
+    background-color: black;
+    color: white;
+    transition: 0.5s ease;
+}
+
+/* End Services Area */
+
+/* Portfolio Area */
+
+.site-main .portfolio-area {
+    padding: 4rem 0rem;
+}
+
+.site-main .portfolio-area .button-group button {
+    background: transparent;
+    border: none;
+    font: normal 500 16px var(--roboto-condensed);
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.site-main .portfolio-area .button-group button:hover{
+    background: black !important;
+    color: whitesmoke !important;
+}
+
+.site-main .portfolio-area .button-group button + button {
+    padding-left: 3rem;
+}
+
+.site-main .portfolio-area .grid .our-project > .title h4 {
+    font: normal 700 25px/12px var(--roboto-condensed);
+}
+
+.site-main .portfolio-area .grid .our-project .img a:hover img {
+    filter: brightness(1.1) drop-shadow(1px 8px 30px #b1afaf);
+}
+
+/* End Portfolio Area */
+
+/* Contact Area */
+
+.site-main .contact-area {
+    padding-top: 1rem;
+    margin-bottom: 100px;
+}
+
+.site-main .contact-area h1 {
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.site-main .contact-area .circle:hover {
+    background: black;
+    color: whitesmoke;
+    transition: 0.5s ease;
+}
+
+.site-main .contact-area .site-button .button.button.primary-button {
+    background: black !important;
+}
+
+.site-main .contact-area .site-button .button.button.primary-button:hover {
+    background: whitesmoke !important;
+    color: black !important;
+    border: 3px solid black !important;
+}
+
+/* End Contact Area */
+
+
+/* Footer Area */
+
+.footer-area {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+    padding-bottom: 1rem;
+}
+
+.footer-area .social i {
+    color: gray;
+    font-size: 30px;
+    padding-bottom: 1rem;
+}
+
+.footer-area .social i:hover {
+    color: black;
+    transition: 0.5s ease;
+}
+
+.footer-area .copyright a {
+    color: gray;
+}
+
+.footer-area .copyright a:hover {
+    color: black;
+    transition: 0.5s ease;
+}
+
+/* End Footer Area */
