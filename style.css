@@ -833,3 +833,245 @@ body {
   .promise-grid { grid-template-columns: 1fr; }
   .fun-facts { flex-direction: column; align-items: center; }
 }
+
+/* =============================================
+   PASSCODE OVERLAY
+   ============================================= */
+.passcode-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.passcode-overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.passcode-card {
+  background: white;
+  padding: 40px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(255, 77, 136, 0.2);
+  border: 2px solid rgba(255, 77, 136, 0.3);
+  max-width: 400px;
+  width: 90%;
+  animation: float-gentle 4s ease-in-out infinite;
+}
+
+.passcode-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.passcode-card h2 {
+  font-family: var(--font-display);
+  color: var(--red-deep);
+  margin-bottom: 8px;
+}
+
+.passcode-card p {
+  font-family: var(--font-body);
+  color: #8b5a6b;
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+}
+
+.passcode-input-group {
+  margin-bottom: 20px;
+}
+
+#passcode-input {
+  font-size: 2rem;
+  letter-spacing: 8px;
+  text-align: center;
+  width: 100%;
+  max-width: 200px;
+  padding: 12px;
+  border: 2px solid var(--pink-light);
+  border-radius: 12px;
+  color: var(--red-deep);
+  outline: none;
+  background: var(--pink-pale);
+  transition: var(--transition);
+}
+
+#passcode-input:focus {
+  border-color: var(--pink-hot);
+  box-shadow: 0 0 15px rgba(255, 77, 136, 0.3);
+}
+
+.passcode-btn {
+  background: var(--gradient-main);
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: var(--shadow-glow);
+  transition: var(--transition);
+  width: 100%;
+}
+
+.passcode-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(255, 77, 136, 0.4);
+}
+
+.passcode-error {
+  color: var(--red);
+  font-size: 0.85rem !important;
+  margin-top: 12px;
+  margin-bottom: 0 !important;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.passcode-error.show {
+  opacity: 1;
+  animation: shake 0.4s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+/* =============================================
+   TRICK QUESTION SECTION
+   ============================================= */
+.trick-section {
+  background: white;
+}
+
+.trick-card {
+  background: var(--gradient-soft);
+  border: 2px solid rgba(255, 77, 136, 0.2);
+  border-radius: 24px;
+  padding: 48px 40px;
+  box-shadow: var(--shadow-card);
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.trick-icon {
+  font-size: 3.5rem;
+  margin-bottom: 16px;
+  animation: bounce 2s infinite;
+}
+
+.trick-card h3 {
+  font-family: var(--font-display);
+  color: var(--red-deep);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.trick-desc {
+  font-family: var(--font-body);
+  color: #6b3a50;
+  margin-bottom: 32px;
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+.trick-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  position: relative;
+  min-height: 50px;
+  width: 100%;
+}
+
+.trick-btn {
+  padding: 14px 36px;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  z-index: 2;
+  min-width: 180px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+@keyframes pulse-btn {
+  0% { box-shadow: 0 0 0 0 rgba(255, 77, 136, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(255, 77, 136, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 77, 136, 0); }
+}
+
+.yes-btn {
+  background: var(--gradient-main);
+  color: white;
+  animation: pulse-btn 2s infinite;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.yes-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  animation: none; /* Stop pulse on hover */
+  box-shadow: 0 12px 35px rgba(255, 77, 136, 0.45);
+}
+
+.no-btn {
+  background: white;
+  color: #8b5a6b;
+  border-color: rgba(255, 77, 136, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+  transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94), background 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.no-btn:hover {
+  background: var(--pink-pale);
+  color: var(--red-deep);
+  border-color: var(--pink-hot);
+  box-shadow: 0 8px 25px rgba(255, 77, 136, 0.15);
+}
+
+.trick-success {
+  margin-top: 30px;
+  font-family: var(--font-script);
+  font-size: 2rem;
+  color: var(--pink-hot);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease;
+  height: 0;
+}
+
+.trick-success.show {
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+}
+}

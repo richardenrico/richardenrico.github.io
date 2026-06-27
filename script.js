@@ -364,3 +364,83 @@
   `;
   document.head.appendChild(style);
 })();
+
+// =============================================
+// 7. PASSCODE SCREEN
+// =============================================
+(function initPasscode() {
+  const overlay = document.getElementById('passcode-overlay');
+  const input = document.getElementById('passcode-input');
+  const submitBtn = document.getElementById('passcode-submit');
+  const errorMsg = document.getElementById('passcode-error');
+
+  if (!overlay) return;
+
+  // Lock scrolling initially
+  document.body.style.overflow = 'hidden';
+
+  function checkPasscode() {
+    if (input.value === '2806') {
+      overlay.classList.add('hidden');
+      document.body.style.overflow = ''; // Unlock scrolling
+      
+      // Try to start music on unlock
+      const audioBtn = document.getElementById('audio-btn');
+      if (audioBtn) {
+        audioBtn.click();
+      }
+    } else {
+      errorMsg.classList.add('show');
+      input.value = '';
+      input.focus();
+      setTimeout(() => {
+        errorMsg.classList.remove('show');
+      }, 2000);
+    }
+  }
+
+  submitBtn.addEventListener('click', checkPasscode);
+  
+  input.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      checkPasscode();
+    }
+  });
+})();
+
+// =============================================
+// 8. TRICK QUESTION (NO BUTTON MOVES)
+// =============================================
+(function initTrickQuestion() {
+  const noBtn = document.getElementById('btn-no');
+  const yesBtn = document.getElementById('btn-yes');
+  const successMsg = document.getElementById('trick-success');
+
+  if (!noBtn || !yesBtn) return;
+
+  function moveNoBtn() {
+    // Calculate a random translation within -150px to 150px
+    const x = Math.random() * 300 - 150; 
+    const y = Math.random() * 300 - 150; 
+    
+    // Add some boundaries so it doesn't go entirely off screen
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+  }
+
+  noBtn.addEventListener('mouseover', moveNoBtn);
+  noBtn.addEventListener('touchstart', (e) => {
+    e.preventDefault(); // Prevent accidental click on mobile
+    moveNoBtn();
+  });
+  noBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    moveNoBtn();
+  });
+
+  yesBtn.addEventListener('click', () => {
+    successMsg.classList.add('show');
+    // Disable or fade out the no button
+    noBtn.style.opacity = '0';
+    noBtn.style.pointerEvents = 'none';
+  });
+})();

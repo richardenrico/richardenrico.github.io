@@ -17,6 +17,20 @@
 
 <body>
 
+  <!-- Passcode Overlay -->
+  <div id="passcode-overlay" class="passcode-overlay">
+    <div class="passcode-card">
+      <div class="passcode-icon">🔒</div>
+      <h2>Website Terkunci</h2>
+      <p>Masukkan passcode (DDMM) untuk membuka memori kita.</p>
+      <div class="passcode-input-group">
+        <input type="password" id="passcode-input" maxlength="4" placeholder="••••" autocomplete="off" />
+      </div>
+      <button id="passcode-submit" class="passcode-btn">Buka</button>
+      <p id="passcode-error" class="passcode-error">Passcode salah, coba lagi ya!</p>
+    </div>
+  </div>
+
   <!-- Floating particles canvas -->
   <canvas id="particles-canvas"></canvas>
 
@@ -86,7 +100,7 @@
           <div class="counter-icon">🌸</div>
         </div>
         <div class="counter-card" id="cnt-months">
-          <div class="counter-number">24</div>
+          <div class="counter-number">0</div>
           <div class="counter-label">Bulan</div>
           <div class="counter-icon">🌙</div>
         </div>
@@ -232,6 +246,26 @@
               panjang yang akan kita tulis bersama. ✨</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRICK QUESTION SECTION ===== -->
+  <section id="trick-question" class="trick-section section">
+    <div class="section-container">
+      <div class="section-label">👀 Tes Kejujuran</div>
+      <h2 class="section-title">Waktunya Menjawab!</h2>
+      <p class="section-subtitle">Ayo buktikan seberapa sayang kamu sama Koko 😉</p>
+
+      <div class="trick-card">
+        <div class="trick-icon">🤔</div>
+        <h3>Koko Tidak Pakbak kan?</h3>
+        <p class="trick-desc">Pilih jawabanmu dengan bijak, karena jawaban yang benar hanya ada satu!</p>
+        <div class="trick-buttons">
+          <button id="btn-yes" class="trick-btn yes-btn">💖 Yes, Tentu Saja!</button>
+          <button id="btn-no" class="trick-btn no-btn">🙈 No</button>
+        </div>
+        <p id="trick-success" class="trick-success">Wah benar sekali! Koko memang paling the best ❤️</p>
       </div>
     </div>
   </section>
