@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>2 Tahun Bersama 💕 Babang Ganteng & Maya Bussu</title>
+  <meta name="description" content="Merayakan 2 tahun indah bersama Babang Ganteng & Maya Bussu. Dua tahun penuh cinta, tawa, dan kenangan tak terlupakan."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- Floating particles canvas -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Navigation dots -->
+  <nav class="nav-dots" aria-label="Section navigation">
+    <a href="#hero" class="nav-dot active" title="Home" aria-label="Hero section"></a>
+    <a href="#counter" class="nav-dot" title="Waktu Bersama" aria-label="Counter section"></a>
+    <a href="#love-letter" class="nav-dot" title="Surat Cinta" aria-label="Love letter section"></a>
+    <a href="#memories" class="nav-dot" title="Kenangan" aria-label="Memories section"></a>
+    <a href="#promise" class="nav-dot" title="Janji" aria-label="Promise section"></a>
+  </nav>
+
+  <!-- Audio control -->
+  <button id="audio-btn" class="audio-btn" aria-label="Toggle music">
+    <span class="audio-icon">♫</span>
+    <span class="audio-label">Musik</span>
+  </button>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="hero" class="hero section">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-heart">💕</span>
+        <span>Happy Anniversary</span>
+        <span class="badge-heart">💕</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="name-1 reveal-up">Babang Ganteng</span>
+        <span class="ampersand reveal-up">&amp;</span>
+        <span class="name-2 reveal-up">Maya Bussu</span>
+      </h1>
+
+      <div class="hero-years reveal-up">
+        <div class="years-number">2</div>
+        <div class="years-text">Tahun<br/>Bersama</div>
+      </div>
+
+      <p class="hero-date reveal-up">27 Juni 2024 — 27 Juni 2026</p>
+      <p class="hero-subtitle reveal-up">Dua tahun penuh cinta, tawa, dan kenangan tak terlupakan 🌹</p>
+
+      <a href="#counter" class="hero-cta reveal-up" id="hero-cta-btn">
+        <span>Jelajahi Kisah Kita</span>
+        <span class="cta-arrow">↓</span>
+      </a>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== COUNTER SECTION ===== -->
+  <section id="counter" class="counter-section section">
+    <div class="section-container">
+      <div class="section-label">⏳ Waktu Bersama</div>
+      <h2 class="section-title">Sudah Berapa Lama Kita Bersama?</h2>
+      <p class="section-subtitle">Setiap detik bersamamu adalah anugerah</p>
+
+      <div class="counter-grid">
+        <div class="counter-card" id="cnt-years">
+          <div class="counter-number" data-target="2">0</div>
+          <div class="counter-label">Tahun</div>
+          <div class="counter-icon">🌸</div>
+        </div>
+        <div class="counter-card" id="cnt-months">
+          <div class="counter-number">24</div>
+          <div class="counter-label">Bulan</div>
+          <div class="counter-icon">🌙</div>
+        </div>
+        <div class="counter-card" id="cnt-days">
+          <div class="counter-number" id="days-count">0</div>
+          <div class="counter-label">Hari</div>
+          <div class="counter-icon">☀️</div>
+        </div>
+        <div class="counter-card" id="cnt-hours">
+          <div class="counter-number" id="hours-count">0</div>
+          <div class="counter-label">Jam</div>
+          <div class="counter-icon">⏰</div>
+        </div>
+        <div class="counter-card" id="cnt-mins">
+          <div class="counter-number" id="mins-count">0</div>
+          <div class="counter-label">Menit</div>
+          <div class="counter-icon">💫</div>
+        </div>
+        <div class="counter-card" id="cnt-secs">
+          <div class="counter-number" id="secs-count">0</div>
+          <div class="counter-label">Detik</div>
+          <div class="counter-icon">❤️</div>
+        </div>
+      </div>
+
+      <div class="fun-facts">
+        <div class="fun-fact">
+          <span class="fun-fact-icon">💑</span>
+          <span class="fun-fact-text">~<span id="hugs-count">17520</span> pelukan yang diberikan</span>
+        </div>
+        <div class="fun-fact">
+          <span class="fun-fact-icon">💬</span>
+          <span class="fun-fact-text">~<span id="msgs-count">50000</span>+ pesan yang terkirim</span>
+        </div>
+        <div class="fun-fact">
+          <span class="fun-fact-icon">💖</span>
+          <span class="fun-fact-text">Tak terhitung cinta yang dirasakan</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LOVE LETTER SECTION ===== -->
+  <section id="love-letter" class="love-letter-section section">
+    <div class="section-container">
+      <div class="section-label">💌 Pesan Cinta</div>
+      <h2 class="section-title">Surat Untukmu</h2>
+
+      <div class="letter-wrapper">
+        <div class="letter-card">
+          <div class="letter-header">
+            <span class="letter-rose">🌹</span>
+            <p class="letter-to">Untuk Maya Bussu tersayangku,</p>
+          </div>
+
+          <div class="letter-body">
+            <p>Dua tahun… terasa seperti kemarin saat pertama kali kita bertemu, tapi juga terasa seperti selamanya — karena bersama kamu, hidupku jadi lebih berwarna.</p>
+            <p>Setiap pagi yang kumulai bersamamu adalah hadiah. Setiap tawa yang kita bagi adalah melodi. Setiap momen kecil — dari hal-hal bodoh yang membuat kita tertawa sampai percakapan tengah malam yang panjang — semuanya membuatku semakin yakin bahwa kamu adalah orang yang ingin aku pilih setiap harinya.</p>
+            <p>Kamu mengajarkanku arti kesabaran, kesetiaan, dan cinta yang tulus. Di sisimu, aku menemukan rumah — bukan tempat, tapi perasaan.</p>
+            <p>Terima kasih sudah hadir, sudah bertahan, dan sudah terus memilihku seperti aku memilihmu.</p>
+            <p>Dua tahun ini hanyalah awal dari segalanya. 💕</p>
+          </div>
+
+          <div class="letter-footer">
+            <p class="letter-from">Dengan sepenuh cinta,</p>
+            <p class="letter-signature">Babang Gantengmu 🌹</p>
+          </div>
+
+          <div class="letter-seal">💌</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MEMORIES / TIMELINE SECTION ===== -->
+  <section id="memories" class="memories-section section">
+    <div class="section-container">
+      <div class="section-label">📸 Kenangan Manis</div>
+      <h2 class="section-title">Perjalanan Kita</h2>
+      <p class="section-subtitle">Momen-momen yang akan selalu kita ingat</p>
+
+      <div class="timeline">
+        <div class="timeline-item left">
+          <div class="timeline-dot">🌟</div>
+          <div class="timeline-card">
+            <div class="timeline-date">27 Juni 2024</div>
+            <h3 class="timeline-title">Awal Dari Segalanya</h3>
+            <p class="timeline-desc">Hari ketika kamu resmi jadi bagian terpenting dalam hidupku. Hari itu aku tahu, kamu adalah jawaban dari semua doa-doaku. 🙏</p>
+          </div>
+        </div>
+
+        <div class="timeline-item right">
+          <div class="timeline-dot">🎂</div>
+          <div class="timeline-card">
+            <div class="timeline-date">Bulan Pertama</div>
+            <h3 class="timeline-title">Jatuh Cinta Setiap Hari</h3>
+            <p class="timeline-desc">Setiap hari kita saling mengenal lebih dalam. Setiap cerita, setiap tawa, membuat ikatan kita semakin kuat. 💫</p>
+          </div>
+        </div>
+
+        <div class="timeline-item left">
+          <div class="timeline-dot">🌻</div>
+          <div class="timeline-card">
+            <div class="timeline-date">6 Bulan Bersama</div>
+            <h3 class="timeline-title">Melewati Rintangan Pertama</h3>
+            <p class="timeline-desc">Setiap hubungan punya badainya sendiri. Tapi kita melewatinya bersama, dan itu membuktikan betapa kuatnya kita. 💪</p>
+          </div>
+        </div>
+
+        <div class="timeline-item right">
+          <div class="timeline-dot">🎉</div>
+          <div class="timeline-card">
+            <div class="timeline-date">1 Tahun Bersama</div>
+            <h3 class="timeline-title">Anniversary Pertama</h3>
+            <p class="timeline-desc">Satu tahun yang luar biasa! Penuh kenangan, petualangan, dan cinta yang terus tumbuh. Aku semakin bersyukur memilikimu. 🎊</p>
+          </div>
+        </div>
+
+        <div class="timeline-item left">
+          <div class="timeline-dot">🌙</div>
+          <div class="timeline-card">
+            <div class="timeline-date">Hari-Hari Biasa</div>
+            <h3 class="timeline-title">Kebahagiaan dalam Kesederhanaan</h3>
+            <p class="timeline-desc">Percakapan panjang, makan bersama, tertawa tanpa alasan — hal-hal kecil itulah yang paling aku rindukan saat kita berjauhan. 🌸</p>
+          </div>
+        </div>
+
+        <div class="timeline-item right">
+          <div class="timeline-dot">💕</div>
+          <div class="timeline-card">
+            <div class="timeline-date">27 Juni 2026</div>
+            <h3 class="timeline-title">2 Tahun Penuh Cinta!</h3>
+            <p class="timeline-desc">Hari ini kita merayakan dua tahun yang indah. Dan ini baru permulaan dari cerita panjang yang akan kita tulis bersama. ✨</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROMISE SECTION ===== -->
+  <section id="promise" class="promise-section section">
+    <div class="section-container">
+      <div class="section-label">🤝 Janji Kita</div>
+      <h2 class="section-title">Untukmu, Selamanya</h2>
+      <p class="section-subtitle">Janji-janji kecil yang membuat cinta kita abadi</p>
+
+      <div class="promise-grid">
+        <div class="promise-card">
+          <div class="promise-icon">💞</div>
+          <h3>Selalu Ada</h3>
+          <p>Di setiap suka dan duka, aku berjanji untuk selalu hadir dan menjadi sandaranmu.</p>
+        </div>
+        <div class="promise-card">
+          <div class="promise-icon">🗣️</div>
+          <h3>Selalu Jujur</h3>
+          <p>Karena kejujuran adalah fondasi terkuat dari sebuah cinta yang nyata.</p>
+        </div>
+        <div class="promise-card">
+          <div class="promise-icon">🌱</div>
+          <h3>Tumbuh Bersama</h3>
+          <p>Kita tidak harus sempurna, tapi kita berjanji untuk terus belajar dan tumbuh bersama.</p>
+        </div>
+        <div class="promise-card">
+          <div class="promise-icon">😄</div>
+          <h3>Selalu Ketawa</h3>
+          <p>Berjanji untuk tidak kehilangan tawa di antara kita, karena itu adalah obat terbaik.</p>
+        </div>
+        <div class="promise-card">
+          <div class="promise-icon">🔐</div>
+          <h3>Setia Selamanya</h3>
+          <p>Hanya kamu yang aku pilih, kemarin, hari ini, dan di setiap hari yang akan datang.</p>
+        </div>
+        <div class="promise-card">
+          <div class="promise-icon">✨</div>
+          <h3>Bahagiakan Kamu</h3>
+          <p>Menjadikan senyummu sebagai tujuan hidupku yang paling berharga.</p>
+        </div>
+      </div>
+
+      <div class="final-message">
+        <div class="final-heart">❤️</div>
+        <h3 class="final-title">Happy 2nd Anniversary, Sayang!</h3>
+        <p class="final-text">Terima kasih sudah memilihku setiap harinya.<br/>Aku cinta kamu lebih dari yang bisa aku katakan. 🌹</p>
+        <div class="final-names">Babang Ganteng ❤️ Maya Bussu</div>
+        <div class="final-date">27 Juni 2026</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Audio element (web-safe, no external dependency needed — using oscillator via JS) -->
+
+  <script src="script.js"></script>
+</body>
+</html>
