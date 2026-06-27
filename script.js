@@ -74,7 +74,7 @@
 // 2. LIVE ANNIVERSARY COUNTER
 // =============================================
 (function initCounter() {
-  const startDate = new Date('2024-06-27T00:00:00');
+  const startDate = new Date('2024-06-28T00:00:00');
 
   function update() {
     const now   = new Date();
